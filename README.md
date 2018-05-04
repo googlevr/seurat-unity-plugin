@@ -1,6 +1,8 @@
 # Importing Seurat Meshes Into Unity
 
-DISCLAIMER: This is not an officially supported Google product.
+Seurat is a scene simplification technology designed to process very complex 3D scenes into a representation that renders efficiently on mobile 6DoF VR systems.
+
+This document covers how to import Seurat meshes into Unity. To learn more about the Seurat pipeline, visit the main [Seurat GitHub page](https://github.com/googlevr/seurat).
 
 ## Introduction
 
@@ -177,3 +179,6 @@ Several things in Unity can generate a background color:
 ### Capture Settings
 If none of the above fixes the issue, or you see holes in the mesh - try
 rebaking with higher quality capture settings.
+
+DISCLAIMER: This is not an officially supported Google product.
+
