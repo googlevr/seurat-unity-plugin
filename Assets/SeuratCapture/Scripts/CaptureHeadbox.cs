@@ -23,8 +23,6 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using System.Collections.Generic;
-using System;
 using System.IO;
 
 public enum CubeFaceResolution
@@ -130,7 +128,14 @@ public class CaptureHeadbox : MonoBehaviour {
 
     string capture_output_folder = output_folder_;
     if (capture_output_folder.Length <= 0) {
+#if UNITY_EDITOR
       capture_output_folder = FileUtil.GetUniqueTempPathInProject();
+
+#else
+      Debug.LogError("No path was specified");
+      StopCapture();
+      return;
+#endif
     }
     Directory.CreateDirectory(capture_output_folder);
     capture_.BeginCapture(this, capture_output_folder, 1, new CaptureStatus());
